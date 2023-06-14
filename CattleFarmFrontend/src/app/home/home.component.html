@@ -1,0 +1,67 @@
+<div style="margin: 10px;">
+    <div style="margin-top: 1em;">
+        <h1 style="text-align: center;" class="h1" > FARM CATTLE CONTROL SYSTEM </h1>
+    </div>
+    <div style="margin-top: 1em;">
+        <p style="margin-bottom: 1em;" class="p">
+            If you want to add a new Cattle, click on the button below:
+        </p>
+        <button type="button" class="btn btn-success" (click)="redirectToAddCattleForm()">New Cattle</button>
+    </div>
+    <div style="margin-top: 5em;">
+        <p class="p">
+            Here, you can see the list of the current cattle:
+        </p>
+        <div>
+            <table class="table">
+                <thead class="thead-dark">
+                  <tr>
+                    <th scope="col">Code</th>
+                    <th scope="col">Breed</th>
+                    <th scope="col">Sex</th>
+                    <th scope="col">Role</th>
+                    <th scope="col">Age</th>
+                    <th scope="col"> </th>
+                    <th scope="col"> </th>
+                    <th scope="col"> </th>
+                  </tr>
+                </thead>
+                <tbody *ngIf="cattles.length>0">
+                    <tr *ngFor="let cattle of cattles">
+                        <td>{{cattle.code}}</td>
+                        <td>{{cattle.breed}}</td>
+                        <td>{{cattle.sex}}</td>
+                        <td>{{cattle.role}}</td>
+                        <td>{{cattle.age}}</td>
+                        <td>
+                            <button type="button" class="btn btn-info badge" (click)="redirectToCattle(cattle.code)">Info</button>
+                        </td>
+                        <td>
+                            <button type="button" class="btn btn-secondary badge" (click)="updateCattleRole(cattle.code)">Update</button>
+                        </td>
+                        <td>
+                            <button type="button" class="btn btn-danger badge" (click)="deleteCattle(cattle.code)">Delete</button>
+                        </td>
+                    </tr>
+                </tbody>
+                <tbody *ngIf="cattles.length==0">
+                    <tr> 
+                        <td colspan=7>
+                            <p style="text-align: center;">
+                                It seems there is no cattle registered, you can click on the <button type="button" class="btn btn-success badge">New Cattle</button> to add new cattle.
+                            </p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div style="margin-top: 5em;">
+        <p class="p">
+            If you want to see more information of a Cattle, click on the <button class="btn btn-info badge">Info</button> button.
+        </p>
+        <p class="p">
+            If you want to delete a Cattle, click on the <button class="btn btn-danger badge">Delete</button> button.
+        </p>
+    </div>
+</div>

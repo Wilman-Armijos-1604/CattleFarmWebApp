@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "OdORv0zL6q20RvAbzDnGRJWohd1MFMPuJ6RtTbglpqk=",
+  "Source": "CattleFarmBackend",
+  "BasePath": "_content/CattleFarmBackend",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

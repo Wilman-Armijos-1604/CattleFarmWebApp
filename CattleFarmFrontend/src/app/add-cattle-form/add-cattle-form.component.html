@@ -1,0 +1,52 @@
+<div style="margin: 10px;">
+    <div style="margin-top: 1em;">
+        <h1 style="text-align: center;" class="h1"> NEW COW REGISTRATION </h1>
+    </div>
+    <div style="margin-top: 1em; display: flex; align-items: center; justify-content: center;">
+        <form #form="ngForm" (ngSubmit)="addCattle()">
+            <div style="margin-top: 1em;">
+                <label for="cattleBreed">Cattle Breed<span style="color: red;">*</span>: </label>
+                <input type="text" class="form-control" id="cattleBreed" name="cattleBreed" aria-describedby="breedHelp" placeholder="Holstein" [(ngModel)]="cattleToAdd.breed">
+                <small id="breedHelp" class="form-text text-muted">Example: "Holstein"</small>
+            </div>
+
+            <div style="margin-top: 1em;">
+                <label for="cattleSex">Cattle Sex<span style="color: red;">*</span>: </label>
+                <select class="form-control select" id="cattleSex" name="cattleSex" aria-describedby="sexHelp" [(ngModel)]="cattleToAdd.sex">
+                    <option>Select one option...</option>
+                    <option *ngFor="let sexOption of cattleSexOptions">{{sexOption.value}}</option>
+                </select>
+                <small id="sexHelp" class="form-text text-muted">Please, select one option</small>
+            </div>
+
+            <div style="margin-top: 1em;">
+                <label for="cattleRole">Cattle Role<span style="color: red;">*</span>: </label>
+                <select class="form-control select" id="cattleRole" name="cattleRole" aria-describedby="roleHelp" [(ngModel)]="cattleToAdd.role">
+                    <option selected>Select one option...</option>
+                    <option *ngFor="let roleOption of cattleRoleOptions">{{roleOption.value}}</option>
+                </select>
+                <small id="roleHelp" class="form-text text-muted">Please, select one option</small>
+            </div>
+
+            <div class="form-group" style="margin-top: 1em;">
+                <label for="cattleBornDate">Cattle Born Date<span style="color: red;">*</span>: </label>
+                <input type="text" class="form-control" id="cattleBornDate" name="cattleBornDate" aria-describedby="bornDateHelp" placeholder="2022-09-20" [(ngModel)]="bornDateString">
+                <small id="bornDateHelp" class="form-text text-muted">Please, enter a valid date in format "yyyy-mm-dd"</small>
+            </div>
+
+            <div class="alert alert-danger" role="alert" style="margin: 2em;" *ngIf="validationErrors">
+                <p>
+                    Please, verify that all the required fields are correct.
+                </p>
+            </div>
+            <div style="margin-top: 1em;">
+                <p>(<span style="color: red;">*</span>Field Required)</p>
+            </div>
+
+            <div class="col" style="margin-top: 1em; display: flex; justify-content: center; align-items: center;">
+                <button class="col" type="submit" class="btn btn-primary">Add Cattle</button>
+                <button class="col" style="margin: 1em;" class="col" class="btn btn-danger" (click)="redirectToHome()">Cancel</button>
+            </div>
+        </form>
+    </div>
+</div>

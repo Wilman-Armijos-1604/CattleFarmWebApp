@@ -1,0 +1,40 @@
+<div style="margin: 10px;">
+    <div style="margin-top: 1em;">
+        <h1 style="text-align: center;" class="h1"> COW #{{cattleCode}}: MEDICINE REGISTRATION </h1>
+    </div>
+    <div style="margin-top: 1em; display: flex; align-items: center; justify-content: center;">
+        <form #form="ngForm" (ngSubmit)="addCattleMeds()">
+            <div style="margin-top: 1em;">
+                <label for="medName">Medicine Name<span style="color: red;">*</span>: </label>
+                <input type="text" class="form-control" id="medName" name="medName" aria-describedby="medNameHelp" placeholder="Tilmicosin" [(ngModel)]="cattleMedtoAdd.medName">
+                <small id="medNameHelp" class="form-text text-muted">Example: "Holstein"</small>
+            </div>
+
+            <div style="margin-top: 1em;">
+                <label for="medQuantity">Medicine Quantity<span style="color: red;">*</span>: </label>
+                <input type="text" class="form-control" id="medQuantity" name="medQuantity" aria-describedby="medQuantityHelp" placeholder="0.0" [(ngModel)]="medQuantity">
+                <small id="medQuantityHelp" class="form-text text-muted">Please, enter a number separated by "." for decimals</small>
+            </div>
+
+            <div style="margin-top: 1em;">
+                <label for="medDate">Medicine Date<span style="color: red;">*</span>: </label>
+                <input type="text" class="form-control" id="medDate" name="medDate" aria-describedby="medDateHelp" placeholder="2020-09-20" [(ngModel)]="medDateString">
+                <small id="medDateHelp" class="form-text text-muted">Please, enter a valid date in format "yyyy-mm-dd"</small>
+            </div>
+
+            <div class="alert alert-danger" role="alert" style="margin: 2em;" *ngIf="validationErrors">
+                <p>
+                    Please, verify that all the required fields are correct.
+                </p>
+            </div>
+            <div style="margin-top: 1em;">
+                <p>(<span style="color: red;">*</span>Field Required)</p>
+            </div>
+
+            <div class="col" style="margin-top: 1em; display: flex; justify-content: center; align-items: center;">
+                <button type="submit" class="btn btn-primary">Register</button>
+                <button class="col" style="margin: 1em;" class="btn btn-danger" (click)="redirectToCattle()">Cancel</button>
+            </div>
+        </form>
+    </div>
+</div>

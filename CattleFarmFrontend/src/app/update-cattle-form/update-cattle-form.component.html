@@ -1,0 +1,46 @@
+<div class="row" style="margin: 10px;">
+    <div style="margin-top: 1em;">
+        <h1 style="text-align: center;" class="h1"> COW #{{cattleCode}} </h1>
+    </div>
+    <div class="col" style="margin-top: 1em; display: flex; align-items: center; justify-content: center; width: 100%;">
+        <form #form="ngForm" (ngSubmit)="updateCattle()">
+            <div style="margin-top: 1em;">
+                <label for="cattleBreed">Cattle Breed: </label>
+                <input style="width: 100%" disabled="true" type="text" readonly class="form-control" id="cattleBreed" name="cattleBreed" [(ngModel)]="cattleRetrieved.breed">
+            </div>
+
+            <div style="margin-top: 1em;">
+                <label for="cattleSex">Cattle Sex: </label>
+                <input disabled="true" type="text" readonly class="form-control" id="cattleSex" name="cattleSex" [(ngModel)]="cattleRetrieved.sex">
+            </div>
+
+            <div style="margin-top: 1em; ">
+                <label for="cattleRole">Cattle Role<span style="color: red;">*</span>: </label>
+                <select class="form-control select" id="cattleRole" name="cattleRole" aria-describedby="roleHelp" [(ngModel)]="cattleRetrieved.role">
+                    <option selected>Select one option...</option>
+                    <option *ngFor="let roleOption of cattleRoleOptions">{{roleOption.value}}</option>
+                </select>
+                <small id="roleHelp" class="form-text text-muted">Please, select one option</small>
+            </div>
+
+            <div class="form-group" style="margin-top: 1em;">
+                <label for="cattleAge">Cattle Age: </label>
+                <input disabled="true" type="text" readonly class="form-control" id="cattleAge" name="cattleAge" [(ngModel)]="cattleRetrieved.age">
+            </div>
+
+            <div class="alert alert-danger" role="alert" style="margin: 2em;" *ngIf="validationErrors">
+                <p>
+                    Please, select a valid role for the cattle.
+                </p>
+            </div>
+            <div style="margin-top: 1em;">
+                <p>(<span style="color: red;">*</span>Field Required)</p>
+            </div>
+
+            <div class="col" style="margin-top: 1em; display: flex; justify-content: center; align-items: center;">
+                <button style="margin: 1em;" class="col" type="submit" class="btn btn-primary">Update</button>
+                <button style="margin: 1em;" class="col" class="btn btn-danger" (click)="redirectToHome()">Cancel</button>
+            </div>
+        </form>
+    </div>
+</div>
