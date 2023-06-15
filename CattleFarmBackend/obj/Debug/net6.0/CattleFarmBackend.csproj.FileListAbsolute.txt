@@ -88,3 +88,9 @@ C:\CattleFarmWebApplication\CattleFarmWebApp\CattleFarmBackend\obj\Debug\net6.0\
 C:\CattleFarmWebApplication\CattleFarmWebApp\CattleFarmBackend\obj\Debug\net6.0\CattleFarmBackend.pdb
 C:\CattleFarmWebApplication\CattleFarmWebApp\CattleFarmBackend\obj\Debug\net6.0\CattleFarmBackend.genruntimeconfig.cache
 C:\CattleFarmWebApplication\CattleFarmWebApp\CattleFarmBackend\obj\Debug\net6.0\ref\CattleFarmBackend.dll
+C:\CattleFarmWebApplication\CattleFarmWebApp\CattleFarmBackend\bin\Debug\net6.0\System.Web.Cors.dll
+C:\CattleFarmWebApplication\CattleFarmWebApp\CattleFarmBackend\bin\Debug\net6.0\System.Net.Http.Formatting.dll
+C:\CattleFarmWebApplication\CattleFarmWebApp\CattleFarmBackend\bin\Debug\net6.0\System.Web.Http.dll
+C:\CattleFarmWebApplication\CattleFarmWebApp\CattleFarmBackend\bin\Debug\net6.0\System.Web.Http.Cors.dll
+C:\CattleFarmWebApplication\CattleFarmWebApp\CattleFarmBackend\bin\Debug\net6.0\Newtonsoft.Json.dll
+C:\CattleFarmWebApplication\CattleFarmWebApp\CattleFarmBackend\bin\Debug\net6.0\Newtonsoft.Json.Bson.dll

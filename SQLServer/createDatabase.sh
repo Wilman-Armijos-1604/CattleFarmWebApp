@@ -1,0 +1,1 @@
+/opt/mssql-tools/bin/sqlcmd -S localhost -U sa -P CattleFarmPwd1 -d master -i dbSetup.sql

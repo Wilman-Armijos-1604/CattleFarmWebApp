@@ -1,4 +1,7 @@
 using FluentValidation.AspNetCore;
+using Microsoft.EntityFrameworkCore;
+
+var origins = "_myAllowSpecificOrigins";
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -11,20 +14,28 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddFluentValidationAutoValidation();
 builder.Services.AddFluentValidationClientsideAdapters();
 
+builder.Services.AddCors(options => 
+{
+    options.AddPolicy(name: origins,
+        policy=>
+        {
+            policy.
+            AllowAnyOrigin().
+            AllowAnyHeader().
+            AllowAnyMethod();
+        }
+        );
+});
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
-{
-    app.UseSwagger();
-    app.UseSwaggerUI();
-}
+app.UseSwagger();
+app.UseSwaggerUI();
 
-app.UseHttpsRedirection();
+app.UseRouting();
 
-app.UseCors(policy => policy.AllowAnyHeader().AllowAnyMethod().AllowAnyOrigin());
-
-app.UseAuthorization();
+app.UseCors(origins);
 
 app.MapControllers();
 

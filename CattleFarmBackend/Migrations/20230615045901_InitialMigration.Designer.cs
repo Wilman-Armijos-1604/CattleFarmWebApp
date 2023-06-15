@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CattleFarmBackend.Migrations
 {
     [DbContext(typeof(RepositoryContext))]
-    [Migration("20230614013512_NewMigration")]
-    partial class NewMigration
+    [Migration("20230615045901_InitialMigration")]
+    partial class InitialMigration
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

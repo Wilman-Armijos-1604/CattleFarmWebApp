@@ -1,0 +1,27 @@
+version: '3'
+services:
+  sqlserver:
+    build: 
+      context: ./SQLServer
+      dockerfile: Dockerfile
+    environment:
+      - ENABLE_CORS=true
+      - ACCEPT_EULA=Y
+      - MSSQL_SA_PASSWORD=CattleFarmPwd1
+      - SA_PASSWORD=CattleFarmPwd1
+    ports:
+      - 1433:1433
+  appbackend:
+    build:
+      context: ./CattleFarmBackend
+      dockerfile: Dockerfile
+    ports:
+      - 7145:80
+    depends_on:
+      - sqlserver
+  appfrontend:
+    build:
+      context: ./CattleFarmFrontend
+      dockerfile: Dockerfile
+    ports:
+    - 4200:80
